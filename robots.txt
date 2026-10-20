@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dimitriostsountos.github.io/mywebsite/sitemap.xml

@@ -296,6 +296,7 @@ ul, ol { margin: 0; padding: 0; }
   font-weight: 500;
   margin-bottom: 28px;
 }
+.status-pill svg { width: 16px; height: 16px; flex: none; color: var(--blue-bright); }
 .status-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
