@@ -1123,7 +1123,7 @@ ul, ol { margin: 0; padding: 0; }
 .copy-btn svg { width: 14px; height: 14px; }
 .copy-btn.is-copied { border-color: var(--green); color: var(--green); }
 
-/* Section targets reached from links (skills evidence, step example) */
+/* Section targets reached from links (step example) */
 .case:target { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(42, 99, 212, 0.18), var(--shadow-lg); }
 .role li:target, .lead-pill:target { background: var(--wash); border-radius: 8px; box-shadow: 0 0 0 6px var(--wash); }
 .motion .case:target, .motion .role li:target, .motion .lead-pill:target { animation: target-pulse 1.6s ease-out; }
@@ -1169,61 +1169,3 @@ ul, ol { margin: 0; padding: 0; }
   80% { transform: rotate(-4deg); }
 }
 .status { transition: background-color .3s, color .3s; }
-
-/* Skills -> evidence */
-.ctag-btn {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 4px;
-  margin: -5px -11px;
-  padding: 5px 11px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-.ctags li.has-evidence { border-color: #b9cbec; background: #fff; transition: border-color .15s, background-color .15s, color .15s; }
-.ctags li.has-evidence:hover { border-color: var(--blue); color: var(--blue); }
-.ctags li.has-evidence.is-selected { background: var(--blue); border-color: var(--blue); color: #fff; }
-.ctags li.has-evidence.is-selected .lvl { color: #dbe5f5; }
-
-.evidence {
-  margin-top: 18px;
-  padding: 18px 20px;
-  border-radius: 12px;
-  background: var(--wash);
-  border: 1px solid #d3def3;
-}
-.motion .evidence { animation: fade-up .3s ease-out; }
-.evidence-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
-.evidence-head p { margin: 0; color: var(--navy); font-weight: 600; font-size: 0.95rem; }
-.evidence-close {
-  flex: none;
-  width: 30px; height: 30px;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--muted);
-  font-size: 1.3rem;
-  line-height: 1;
-  cursor: pointer;
-}
-.evidence-close:hover { background: #dce6f8; color: var(--ink); }
-.evidence-label { margin: 10px 0 6px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.evidence ul { list-style: none; display: grid; gap: 6px; }
-.evidence a {
-  display: block;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: #fff;
-  border: 1px solid #dfe7f5;
-  color: var(--ink);
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-.evidence a:hover { border-color: var(--blue); text-decoration: none; }
-.evidence a .ev-role { display: block; font-size: 0.72rem; font-weight: 600; color: var(--blue); margin-bottom: 2px; }
-.evidence a .ev-text { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.evidence a .ev-arrow { color: var(--blue); }
