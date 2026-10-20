@@ -136,9 +136,9 @@
 
   // Hero flow: hover, focus or tap a node to see the work behind it
   var FLOW_NOTES = {
-    checkout: ["Checkout", "Ran continuous A/B tests on checkout design, pricing, offers and payment methods, and took Apple Pay and Google Pay live in France."],
-    orchestration: ["Orchestration", "Payment orchestration and routing across around five entities, with roughly five MIDs each, on nine payment platforms."],
-    route: ["Route", "Tracked authorization and declines down to PSP, BIN and card type, and re-routed traffic when a PSP underperformed."],
+    checkout: ["Checkout", "Ran continuous A/B tests on checkout design, pricing, offers and payment methods, and owned the payments side of the Apple Pay and Google Pay launch in France."],
+    orchestration: ["Orchestration", "Payment flows across around five entities, with roughly five MIDs each, on ten payment platforms."],
+    route: ["Route", "Tracked authorization and declines down to PSP, BIN and card type, and asked PSPs to reroute traffic when one underperformed."],
     retry: ["Retry", "Owned recurring billing, failed payments, retries and dunning, and helped move retry logic from Sticky.io Smart Dunning in-house."],
     authorized: ["Authorized", "Traced one market's authorization drop to an incorrect Mastercard prepaid parameter and drove the fix: ≈ +7% authorization."]
   };
@@ -268,7 +268,7 @@
   var EVIDENCE = {
     "Payment Operations": ["case-auth", "case-fraud", "pom-1", "pom-3"],
     "Payment Performance Optimization": ["case-auth", "pom-1", "spom-2"],
-    "Payment Orchestration and Routing": ["spom-2", "pom-3"],
+    "Traffic Rerouting Coordination": ["spom-2", "pom-3"],
     "PSP Coordination": ["case-auth", "case-wallets", "pom-3", "pm-2"],
     "Authorization and Decline Analysis": ["case-auth", "pom-1", "spom-2"],
     "Billing, Retries and Dunning": ["pom-2"],
