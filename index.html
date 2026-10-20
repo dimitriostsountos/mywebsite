@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.className += " js" + (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " motion");</script>
 
   <script type="application/ld+json">
   {
@@ -65,6 +66,8 @@
       <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="5" rx="1"/><rect x="2.5" y="16.5" width="6" height="5" rx="1"/><rect x="15.5" y="16.5" width="6" height="5" rx="1"/><path d="M12 7.5V12M5.5 16.5V12h13v4.5"/></symbol>
       <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></symbol>
       <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2Zm0 0A2 2 0 0 0 6 22h14"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
     </defs>
   </svg>
 
@@ -116,9 +119,9 @@
           </div>
 
           <ul class="hero-stats">
-            <li><strong>≈ +7%</strong><span>authorization rate in one market</span></li>
-            <li><strong>4 days</strong><span>instead of 2 weeks, with AI automation</span></li>
-            <li><strong>2 wallets</strong><span>Apple Pay &amp; Google Pay, launched in France</span></li>
+            <li><strong data-count="7" data-prefix="≈ +" data-suffix="%">≈ +7%</strong><span>authorization rate in one market</span></li>
+            <li><strong data-count="4" data-suffix=" days">4 days</strong><span>instead of 2 weeks, with AI automation</span></li>
+            <li><strong data-count="2" data-suffix=" wallets">2 wallets</strong><span>Apple Pay &amp; Google Pay, launched in France</span></li>
           </ul>
 
           <a class="linkedin-link" href="https://www.linkedin.com/in/dimitrios-tsountos/" target="_blank" rel="noopener">
@@ -126,8 +129,8 @@
           </a>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <svg id="flow-svg" viewBox="0 0 520 380" focusable="false">
+        <div class="hero-visual">
+          <svg id="flow-svg" viewBox="0 0 520 400" role="group" aria-label="Payment flow. Select a step to see the work behind it.">
             <defs>
               <pattern id="grid-dots" width="20" height="20" patternUnits="userSpaceOnUse">
                 <circle cx="2" cy="2" r="1" fill="#8aa4cf" opacity=".22"/>
@@ -142,49 +145,76 @@
               </radialGradient>
             </defs>
 
-            <rect x="0" y="0" width="520" height="380" rx="18" fill="url(#grid-dots)"/>
-            <circle cx="262" cy="190" r="120" fill="url(#glow)"/>
+            <g aria-hidden="true">
+              <rect x="0" y="0" width="520" height="400" rx="18" fill="url(#grid-dots)"/>
+              <circle cx="262" cy="190" r="120" fill="url(#glow)"/>
 
-            <!-- feeders -->
-            <path d="M46 108 C 90 108 96 178 108 186" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
-            <path d="M46 272 C 90 272 96 202 108 194" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
+              <!-- feeders -->
+              <path d="M46 108 C 90 108 96 178 108 186" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
+              <path d="M46 272 C 90 272 96 202 108 194" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
+              <circle cx="40" cy="108" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
+              <circle cx="40" cy="272" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
 
-            <!-- main paths -->
-            <g fill="none" stroke="url(#flow-grad)" stroke-width="2.2" stroke-linecap="round">
-              <path id="p-a" d="M152 190 C 180 190 205 190 232 190"/>
-              <path id="p-r1" d="M288 190 C 325 190 330 92 366 92"/>
-              <path id="p-r2" d="M288 190 C 315 190 340 190 366 190"/>
-              <path id="p-r3" d="M288 190 C 325 190 330 288 366 288"/>
-              <path id="p-o1" d="M394 92 C 435 92 440 190 460 190"/>
-              <path id="p-o2" d="M394 190 C 420 190 440 190 460 190"/>
-              <path id="p-o3" d="M394 288 C 435 288 440 190 460 190"/>
+              <!-- main paths -->
+              <g fill="none" stroke="url(#flow-grad)" stroke-width="2.2" stroke-linecap="round">
+                <path d="M152 190 C 180 190 205 190 232 190"/>
+                <path d="M288 190 C 325 190 330 92 366 92"/>
+                <path d="M288 190 C 315 190 340 190 366 190"/>
+                <path d="M288 190 C 325 190 330 288 366 288"/>
+                <path d="M394 92 C 435 92 440 190 460 190"/>
+                <path d="M394 190 C 420 190 440 190 460 190"/>
+                <path d="M394 288 C 435 288 440 190 460 190"/>
+              </g>
+
+              <!-- declined, retried, then authorized -->
+              <path d="M391 299 C 402 330 412 352 428 352" fill="none" stroke="#e2a33b" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="4 4"/>
+              <path d="M452 352 C 478 352 484 262 481 211" fill="none" stroke="#8fb3ff" stroke-opacity=".6" stroke-width="1.6" stroke-dasharray="4 4"/>
             </g>
 
-            <!-- nodes -->
-            <circle cx="40" cy="108" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
-            <circle cx="40" cy="272" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
-
-            <circle cx="130" cy="190" r="22" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-            <rect x="122" y="183" width="16" height="12" rx="2" fill="none" stroke="#c9d8f5" stroke-width="1.6"/>
-            <path d="M122 187.5h16" stroke="#c9d8f5" stroke-width="1.6"/>
-
-            <rect x="232" y="162" width="56" height="56" rx="14" fill="#2a63d4" stroke="#8fb3ff" stroke-opacity=".6" stroke-width="1.5"/>
-            <g stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none">
-              <path d="M250 182h20M250 190h20M250 198h20"/>
+            <!-- interactive nodes -->
+            <g class="flow-node" data-node="checkout" tabindex="0" role="button" aria-label="Checkout">
+              <circle class="hit" cx="130" cy="196" r="34"/>
+              <circle class="node-shape" cx="130" cy="190" r="22" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
+              <rect x="122" y="183" width="16" height="12" rx="2" fill="none" stroke="#c9d8f5" stroke-width="1.6"/>
+              <path d="M122 187.5h16" stroke="#c9d8f5" stroke-width="1.6"/>
+              <text class="flow-label" x="130" y="236" text-anchor="middle">checkout</text>
             </g>
 
-            <circle cx="380" cy="92" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-            <circle cx="380" cy="190" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-            <circle cx="380" cy="288" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-            <circle cx="380" cy="92" r="4" fill="#8fb3ff"/>
-            <circle cx="380" cy="190" r="4" fill="#8fb3ff"/>
-            <circle cx="380" cy="288" r="4" fill="#8fb3ff"/>
+            <g class="flow-node" data-node="orchestration" tabindex="0" role="button" aria-label="Orchestration">
+              <rect class="hit" x="214" y="150" width="92" height="104" rx="16"/>
+              <rect class="node-shape" x="232" y="162" width="56" height="56" rx="14" fill="#2a63d4" stroke="#8fb3ff" stroke-opacity=".6" stroke-width="1.5"/>
+              <path d="M250 182h20M250 190h20M250 198h20" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <text class="flow-label" x="260" y="244" text-anchor="middle">orchestration</text>
+            </g>
 
-            <circle cx="480" cy="190" r="20" fill="#fff"/>
-            <path d="M471 190.5l6 6 11-12" fill="none" stroke="#0a1f44" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <g class="flow-node" data-node="route" tabindex="0" role="button" aria-label="Route">
+              <rect class="hit" x="356" y="52" width="48" height="280" rx="16"/>
+              <circle class="node-shape" cx="380" cy="92" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
+              <circle class="node-shape" cx="380" cy="190" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
+              <circle class="node-shape" cx="380" cy="288" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
+              <circle cx="380" cy="92" r="4" fill="#8fb3ff"/>
+              <circle cx="380" cy="190" r="4" fill="#8fb3ff"/>
+              <circle cx="380" cy="288" r="4" fill="#8fb3ff"/>
+              <text class="flow-label" x="380" y="66" text-anchor="middle">route</text>
+              <text class="flow-label" x="380" y="324" text-anchor="middle">route</text>
+            </g>
+
+            <g class="flow-node" data-node="retry" tabindex="0" role="button" aria-label="Retry">
+              <circle class="hit" cx="440" cy="358" r="28"/>
+              <circle class="node-shape" cx="440" cy="352" r="12" fill="#102a57" stroke="#e2a33b" stroke-width="2"/>
+              <path d="M444.5 348.5a5.2 5.2 0 1 0 1.2 4.6M445 345v3.8h-3.8" fill="none" stroke="#f3c77a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text class="flow-label" x="440" y="384" text-anchor="middle">retry</text>
+            </g>
+
+            <g class="flow-node" data-node="authorized" tabindex="0" role="button" aria-label="Authorized">
+              <circle class="hit" cx="484" cy="200" r="34"/>
+              <circle class="node-shape" cx="480" cy="190" r="20" fill="#fff"/>
+              <path d="M471 190.5l6 6 11-12" fill="none" stroke="#0a1f44" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text class="flow-label" x="480" y="234" text-anchor="middle">authorized</text>
+            </g>
 
             <!-- travelling dots -->
-            <g fill="#bcd2ff">
+            <g fill="#bcd2ff" aria-hidden="true" pointer-events="none">
               <circle class="flow-dot" r="3.5"><animateMotion dur="4s" repeatCount="indefinite" path="M152 190 C 180 190 205 190 232 190"/></circle>
               <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-0.4s" repeatCount="indefinite" path="M288 190 C 325 190 330 92 366 92"/></circle>
               <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-1.6s" repeatCount="indefinite" path="M288 190 C 315 190 340 190 366 190"/></circle>
@@ -192,15 +222,18 @@
               <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-1s" repeatCount="indefinite" path="M394 92 C 435 92 440 190 460 190"/></circle>
               <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-2.2s" repeatCount="indefinite" path="M394 190 C 420 190 440 190 460 190"/></circle>
               <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-3.4s" repeatCount="indefinite" path="M394 288 C 435 288 440 190 460 190"/></circle>
+              <!-- a declined payment goes to retry, then gets authorized -->
+              <circle class="flow-dot" r="3" fill="#f3b54a" opacity="0">
+                <animateMotion dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1" path="M391 299 C 402 330 412 352 428 352"/>
+                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.3;0.31;1"/>
+              </circle>
+              <circle class="flow-dot" r="3" opacity="0">
+                <animateMotion dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4;0.7;1" path="M452 352 C 478 352 484 262 481 211"/>
+                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.39;0.4;0.7;0.71;1"/>
+              </circle>
             </g>
-
-            <!-- labels -->
-            <text class="flow-label" x="130" y="236" text-anchor="middle">checkout</text>
-            <text class="flow-label" x="260" y="244" text-anchor="middle">orchestration</text>
-            <text class="flow-label" x="380" y="66" text-anchor="middle">route</text>
-            <text class="flow-label" x="380" y="324" text-anchor="middle">route</text>
-            <text class="flow-label" x="480" y="234" text-anchor="middle">authorized</text>
           </svg>
+          <p class="flow-caption" id="flow-caption" aria-live="polite"><span class="flow-caption-hint">Hover or tap a step in the flow to see the work behind it.</span></p>
         </div>
       </div>
     </section>
@@ -215,13 +248,18 @@
 
             <div class="method-card">
               <h3>How I investigate a problem</h3>
+              <p class="method-hint">Select a step to see it in a real case.</p>
               <ol class="steps">
-                <li><span class="step-num">1</span><div><strong>Spot</strong><span class="step-text">An anomaly in the KPIs</span></div></li>
-                <li><span class="step-num">2</span><div><strong>Break down</strong><span class="step-text">By market, PSP, MID, BIN, card type</span></div></li>
-                <li><span class="step-num">3</span><div><strong>Validate</strong><span class="step-text">Confirm the cause with data and BI</span></div></li>
-                <li><span class="step-num">4</span><div><strong>Fix</strong><span class="step-text">With Engineering and payment partners</span></div></li>
-                <li><span class="step-num">5</span><div><strong>Confirm</strong><span class="step-text">Check the recovery in the numbers</span></div></li>
+                <li><button type="button" class="step-btn" data-step="0" aria-pressed="true" aria-controls="step-example"><span class="step-num">1</span><span class="step-copy"><strong>Spot</strong><span class="step-text">An anomaly in the KPIs</span></span></button></li>
+                <li><button type="button" class="step-btn" data-step="1" aria-pressed="false" aria-controls="step-example"><span class="step-num">2</span><span class="step-copy"><strong>Break down</strong><span class="step-text">By market, PSP, MID, BIN, card type</span></span></button></li>
+                <li><button type="button" class="step-btn" data-step="2" aria-pressed="false" aria-controls="step-example"><span class="step-num">3</span><span class="step-copy"><strong>Validate</strong><span class="step-text">Confirm the cause with data and BI</span></span></button></li>
+                <li><button type="button" class="step-btn" data-step="3" aria-pressed="false" aria-controls="step-example"><span class="step-num">4</span><span class="step-copy"><strong>Fix</strong><span class="step-text">With Engineering and payment partners</span></span></button></li>
+                <li><button type="button" class="step-btn" data-step="4" aria-pressed="false" aria-controls="step-example"><span class="step-num">5</span><span class="step-copy"><strong>Confirm</strong><span class="step-text">Check the recovery in the numbers</span></span></button></li>
               </ol>
+              <div class="step-example" id="step-example" aria-live="polite">
+                <p class="step-example-label">In practice · <a href="#case-auth">Payment Authorization Optimization</a></p>
+                <p class="step-example-text">I spotted the underperforming market in our payment KPIs.</p>
+              </div>
             </div>
           </div>
 
@@ -253,19 +291,19 @@
         <ul class="impact-grid">
           <li class="impact-card">
             <div class="icon-box" aria-hidden="true"><svg><use href="#i-trend"/></svg></div>
-            <span class="impact-num">≈ +7%</span>
+            <span class="impact-num" data-count="7" data-prefix="≈ +" data-suffix="%">≈ +7%</span>
             <h3>Improved Authorization Performance</h3>
             <p>Traced one market's authorization drop to an incorrect Mastercard prepaid parameter, then drove the fix with Technology and the payment partner.</p>
           </li>
           <li class="impact-card">
             <div class="icon-box" aria-hidden="true"><svg><use href="#i-gear"/></svg></div>
-            <span class="impact-num">4 days</span>
+            <span class="impact-num" data-count="4" data-suffix=" days">4 days</span>
             <h3>Instead of 2 Weeks</h3>
             <p>Rebuilt the partner-declaration workflow with small AI agents (Claude, Zapier, Python). Work that took about two weeks now takes about four days.</p>
           </li>
           <li class="impact-card">
             <div class="icon-box" aria-hidden="true"><svg><use href="#i-phone"/></svg></div>
-            <span class="impact-num">2 wallets</span>
+            <span class="impact-num" data-count="2" data-suffix=" wallets">2 wallets</span>
             <h3>Digital Wallet Launch</h3>
             <p>Took Apple Pay and Google Pay live in a card-only French payment journey, from business case to production, coordinating Engineering, PSPs and Product under a tight deadline.</p>
           </li>
@@ -300,14 +338,14 @@
             <p class="role-date">Mar 2024 – Feb 2026</p>
             <div class="role-body">
               <h3>Payment Operations Manager &amp; Billing Specialist</h3>
-              <p class="role-summary">After a company restructure closed the Self-Managed Card Payments organisation, I took ownership of payments and billing end to end: day-to-day performance, payment partners, merchants and billing across European markets.</p>
+              <p class="role-summary">Owned payments and billing end to end across European markets: day-to-day payment performance, payment partners, merchants and billing.</p>
               <ul>
-                <li>Broke down authorization, declines and fraud by country, MID, PSP, payment method and card type; traced one market's drop to an incorrect Mastercard prepaid parameter and drove the fix (≈7% authorization improvement).</li>
-                <li>Owned the subscription payment lifecycle (recurring billing, failed payments, retries, dunning, refunds) and helped move retry logic from Sticky.io Smart Dunning in-house.</li>
-                <li>Held Stripe, Worldline, IXOPAY, GEP, Inovio, Sticky.io and Celeris accountable on integrations, routing, configuration, SLAs and escalations.</li>
-                <li>Automated the partner-declaration workflow with small AI agents built on Claude, Zapier and Python, cutting it from about two weeks to about four days.</li>
-                <li>Advised merchants directly on payment performance through calls and regular reporting.</li>
-                <li>Built a centralized Monday.com setup workflow with automated stakeholder notifications; supported Finance on reconciliation.</li>
+                <li id="pom-1">Broke down authorization, declines and fraud by country, MID, PSP, payment method and card type; traced one market's drop to an incorrect Mastercard prepaid parameter and drove the fix (≈7% authorization improvement).</li>
+                <li id="pom-2">Owned the subscription payment lifecycle (recurring billing, failed payments, retries, dunning, refunds) and helped move retry logic from Sticky.io Smart Dunning in-house.</li>
+                <li id="pom-3">Held Stripe, Worldline, IXOPAY, GEP, Inovio, Sticky.io and Celeris accountable on integrations, routing, configuration, SLAs and escalations.</li>
+                <li id="pom-4">Automated the partner-declaration workflow with small AI agents built on Claude, Zapier and Python, cutting it from about two weeks to about four days.</li>
+                <li id="pom-5">Advised merchants directly on payment performance through calls and regular reporting.</li>
+                <li id="pom-6">Built a centralized Monday.com setup workflow with automated stakeholder notifications; supported Finance on reconciliation.</li>
               </ul>
             </div>
           </li>
@@ -318,14 +356,14 @@
               <h3>Senior Product Operations Manager</h3>
               <p class="role-summary">Owned multiple B2C subscription and payment products across Europe, the UK, the US, Canada and LATAM, with expansion work towards Japan, Asia and Australia.</p>
               <ul>
-                <li>Owned requirements, backlog and prioritization in two-week agile sprints with Engineering, through UAT and launch readiness for new products and country launches.</li>
-                <li>Tracked conversion, authorization, declines, churn, fraud and chargebacks across ~5 entities, drilling down to PSP, BIN and card type; re-routed traffic when a PSP underperformed.</li>
-                <li>Ran fraud and risk controls (BIN blocking, fraud rules, MID caps, IXOPAY risk scoring) and integrated Ethoca and Visa RDR for chargeback prevention.</li>
-                <li>Ran continuous A/B tests on checkout design, pricing, offers, payment methods, landing pages and copy; evaluated results with SQL, BI and Tableau down to funnel and payment metrics, and decided with Product, Marketing and management what to roll out.</li>
-                <li>Prepared forecasts and business plans for acquirers to secure approval for new traffic and products.</li>
-                <li>Wrote the team's input to the weekly management report sent to the CEO: performance, launches, incidents, root causes and risks.</li>
+                <li id="spom-1">Owned requirements, backlog and prioritization in two-week agile sprints with Engineering, through UAT and launch readiness for new products and country launches.</li>
+                <li id="spom-2">Tracked conversion, authorization, declines, churn, fraud and chargebacks across ~5 entities, drilling down to PSP, BIN and card type; re-routed traffic when a PSP underperformed.</li>
+                <li id="spom-3">Ran fraud and risk controls (BIN blocking, fraud rules, MID caps, IXOPAY risk scoring) and integrated Ethoca and Visa RDR for chargeback prevention.</li>
+                <li id="spom-4">Ran continuous A/B tests on checkout design, pricing, offers, payment methods, landing pages and copy; evaluated results with SQL, BI and Tableau down to funnel and payment metrics, and decided with Product, Marketing and management what to roll out.</li>
+                <li id="spom-5">Prepared forecasts and business plans for acquirers to secure approval for new traffic and products.</li>
+                <li id="spom-6">Wrote the team's input to the weekly management report sent to the CEO: performance, launches, incidents, root causes and risks.</li>
               </ul>
-              <p class="lead-pill"><svg aria-hidden="true"><use href="#i-users"/></svg>Led a team of three Product Operations specialists: work allocation, onboarding and hiring interviews</p>
+              <p class="lead-pill" id="spom-lead"><svg aria-hidden="true"><use href="#i-users"/></svg>Led a team of three Product Operations specialists: work allocation, onboarding and hiring interviews</p>
             </div>
           </li>
 
@@ -335,9 +373,9 @@
               <h3>Product Operations Manager</h3>
               <p class="role-summary">Joined the newly created Self-Managed Card Payments organisation and helped build its payment capability from the ground up.</p>
               <ul>
-                <li>Brought Visa, Mastercard and Amex live, later expanding to Apple Pay and Google Pay.</li>
-                <li>Coordinated with Technology, QA, and external payment partners on integrations and testing.</li>
-                <li>Translated country requirements (payment methods, licensing, Legal and Compliance) into product and technical requirements; supported launches across markets.</li>
+                <li id="pm-1">Brought Visa, Mastercard and Amex live, later expanding to Apple Pay and Google Pay.</li>
+                <li id="pm-2">Coordinated with Technology, QA, and external payment partners on integrations and testing.</li>
+                <li id="pm-3">Translated country requirements (payment methods, licensing, Legal and Compliance) into product and technical requirements; supported launches across markets.</li>
               </ul>
             </div>
           </li>
@@ -364,7 +402,7 @@
 
         <ul class="cases">
           <!-- 1 -->
-          <li class="case">
+          <li id="case-auth" class="case">
             <p class="case-cat">Payments · Data analysis · Root-cause investigation</p>
             <h3>Payment Authorization Optimization</h3>
             <div class="case-visual" aria-hidden="true">
@@ -396,7 +434,7 @@
           </li>
 
           <!-- 2 -->
-          <li class="case">
+          <li id="case-wallets" class="case">
             <p class="case-cat">Digital payments · Product delivery · Technical integrations</p>
             <h3>Apple Pay and Google Pay Launch in France</h3>
             <div class="case-visual" aria-hidden="true">
@@ -433,7 +471,7 @@
           </li>
 
           <!-- 3 -->
-          <li class="case">
+          <li id="case-ai" class="case">
             <p class="case-cat">AI automation · Process improvement · Operational efficiency</p>
             <h3>Partner Declaration Workflow with AI Agents</h3>
             <div class="case-visual" aria-hidden="true">
@@ -462,7 +500,7 @@
           </li>
 
           <!-- 4 -->
-          <li class="case">
+          <li id="case-setup" class="case">
             <p class="case-cat">Product operations · Workflow design · Stakeholder management</p>
             <h3>Centralized Product Setup Workflow</h3>
             <div class="case-visual" aria-hidden="true">
@@ -492,7 +530,7 @@
           </li>
 
           <!-- 5 -->
-          <li class="case case--wide">
+          <li id="case-fraud" class="case case--wide">
             <p class="case-cat">Fraud &amp; risk · Incident management · Escalation</p>
             <h3>Fraud Risk Response and Traffic Shutdown</h3>
             <div class="case-visual" aria-hidden="true">
@@ -533,6 +571,7 @@
         <div class="section-head">
           <p class="eyebrow">Skills and expertise</p>
           <h2 class="section-title" id="skills-title">Where I add the most value.</h2>
+          <p class="lead skills-hint" hidden>Select a highlighted skill to see where it shows up in my work.</p>
         </div>
 
         <div class="skills-grid">
@@ -636,7 +675,7 @@
           </div>
 
           <ul class="contact-details">
-            <li><span>Email</span><a href="mailto:dimitsountos@gmail.com">dimitsountos@gmail.com</a></li>
+            <li><span>Email</span><div class="copy-row"><a href="mailto:dimitsountos@gmail.com">dimitsountos@gmail.com</a><button type="button" class="copy-btn" data-copy="dimitsountos@gmail.com" hidden><svg aria-hidden="true"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button></div></li>
             <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/dimitrios-tsountos/" target="_blank" rel="noopener">linkedin.com/in/dimitrios-tsountos</a></li>
             <li><span>Location</span><strong>Amsterdam, Netherlands</strong></li>
           </ul>
