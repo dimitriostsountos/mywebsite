@@ -26,7 +26,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.className += " js" + (window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " motion");</script>
 
@@ -139,111 +139,27 @@
           </a>
         </div>
 
-        <div class="hero-visual">
-          <svg id="flow-svg" viewBox="0 0 520 400" role="group" aria-label="Payment flow. Select a step to see the work behind it.">
-            <defs>
-              <pattern id="grid-dots" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="#8aa4cf" opacity=".22"/>
-              </pattern>
-              <linearGradient id="flow-grad" x1="130" y1="0" x2="490" y2="0" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#2a63d4"/>
-                <stop offset="1" stop-color="#8fb3ff"/>
-              </linearGradient>
-              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stop-color="#5b8def" stop-opacity=".35"/>
-                <stop offset="1" stop-color="#5b8def" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-
-            <g aria-hidden="true">
-              <rect x="0" y="0" width="520" height="400" rx="18" fill="url(#grid-dots)"/>
-              <circle cx="262" cy="190" r="120" fill="url(#glow)"/>
-
-              <!-- feeders -->
-              <path d="M46 108 C 90 108 96 178 108 186" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
-              <path d="M46 272 C 90 272 96 202 108 194" fill="none" stroke="#8aa4cf" stroke-opacity=".55" stroke-width="1.5" stroke-dasharray="4 5"/>
-              <circle cx="40" cy="108" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
-              <circle cx="40" cy="272" r="7" fill="#1a3a72" stroke="#8aa4cf" stroke-opacity=".7" stroke-width="1.5"/>
-
-              <!-- main paths -->
-              <g fill="none" stroke="url(#flow-grad)" stroke-width="2.2" stroke-linecap="round">
-                <path d="M152 190 C 180 190 205 190 232 190"/>
-                <path d="M288 190 C 325 190 330 92 366 92"/>
-                <path d="M288 190 C 315 190 340 190 366 190"/>
-                <path d="M288 190 C 325 190 330 288 366 288"/>
-                <path d="M394 92 C 435 92 440 190 460 190"/>
-                <path d="M394 190 C 420 190 440 190 460 190"/>
-                <path d="M394 288 C 435 288 440 190 460 190"/>
-              </g>
-
-              <!-- declined, retried, then authorized -->
-              <path d="M391 299 C 402 330 412 352 428 352" fill="none" stroke="#e2a33b" stroke-opacity=".75" stroke-width="1.6" stroke-dasharray="4 4"/>
-              <path d="M452 352 C 478 352 484 262 481 211" fill="none" stroke="#8fb3ff" stroke-opacity=".6" stroke-width="1.6" stroke-dasharray="4 4"/>
-            </g>
-
-            <!-- interactive nodes -->
-            <g class="flow-node" data-node="checkout" tabindex="0" role="button" aria-label="Checkout">
-              <circle class="hit" cx="130" cy="196" r="34"/>
-              <circle class="node-shape" cx="130" cy="190" r="22" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-              <rect x="122" y="183" width="16" height="12" rx="2" fill="none" stroke="#c9d8f5" stroke-width="1.6"/>
-              <path d="M122 187.5h16" stroke="#c9d8f5" stroke-width="1.6"/>
-              <text class="flow-label" x="130" y="236" text-anchor="middle">checkout</text>
-            </g>
-
-            <g class="flow-node" data-node="orchestration" tabindex="0" role="button" aria-label="Orchestration">
-              <rect class="hit" x="214" y="150" width="92" height="104" rx="16"/>
-              <rect class="node-shape" x="232" y="162" width="56" height="56" rx="14" fill="#2a63d4" stroke="#8fb3ff" stroke-opacity=".6" stroke-width="1.5"/>
-              <path d="M250 182h20M250 190h20M250 198h20" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
-              <text class="flow-label" x="260" y="244" text-anchor="middle">orchestration</text>
-            </g>
-
-            <g class="flow-node" data-node="route" tabindex="0" role="button" aria-label="Route">
-              <rect class="hit" x="356" y="52" width="48" height="280" rx="16"/>
-              <circle class="node-shape" cx="380" cy="92" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-              <circle class="node-shape" cx="380" cy="190" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-              <circle class="node-shape" cx="380" cy="288" r="14" fill="#102a57" stroke="#5b8def" stroke-width="2"/>
-              <circle cx="380" cy="92" r="4" fill="#8fb3ff"/>
-              <circle cx="380" cy="190" r="4" fill="#8fb3ff"/>
-              <circle cx="380" cy="288" r="4" fill="#8fb3ff"/>
-              <text class="flow-label" x="380" y="66" text-anchor="middle">route</text>
-              <text class="flow-label" x="380" y="324" text-anchor="middle">route</text>
-            </g>
-
-            <g class="flow-node" data-node="retry" tabindex="0" role="button" aria-label="Retry">
-              <circle class="hit" cx="440" cy="358" r="28"/>
-              <circle class="node-shape" cx="440" cy="352" r="12" fill="#102a57" stroke="#e2a33b" stroke-width="2"/>
-              <path d="M444.5 348.5a5.2 5.2 0 1 0 1.2 4.6M445 345v3.8h-3.8" fill="none" stroke="#f3c77a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text class="flow-label" x="440" y="384" text-anchor="middle">retry</text>
-            </g>
-
-            <g class="flow-node" data-node="authorized" tabindex="0" role="button" aria-label="Authorized">
-              <circle class="hit" cx="484" cy="200" r="34"/>
-              <circle class="node-shape" cx="480" cy="190" r="20" fill="#fff"/>
-              <path d="M471 190.5l6 6 11-12" fill="none" stroke="#0a1f44" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text class="flow-label" x="480" y="234" text-anchor="middle">authorized</text>
-            </g>
-
-            <!-- travelling dots -->
-            <g fill="#bcd2ff" aria-hidden="true" pointer-events="none">
-              <circle class="flow-dot" r="3.5"><animateMotion dur="4s" repeatCount="indefinite" path="M152 190 C 180 190 205 190 232 190"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-0.4s" repeatCount="indefinite" path="M288 190 C 325 190 330 92 366 92"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-1.6s" repeatCount="indefinite" path="M288 190 C 315 190 340 190 366 190"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-2.8s" repeatCount="indefinite" path="M288 190 C 325 190 330 288 366 288"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-1s" repeatCount="indefinite" path="M394 92 C 435 92 440 190 460 190"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-2.2s" repeatCount="indefinite" path="M394 190 C 420 190 440 190 460 190"/></circle>
-              <circle class="flow-dot" r="3"><animateMotion dur="4s" begin="-3.4s" repeatCount="indefinite" path="M394 288 C 435 288 440 190 460 190"/></circle>
-              <!-- a declined payment goes to retry, then gets authorized -->
-              <circle class="flow-dot" r="3" fill="#f3b54a" opacity="0">
-                <animateMotion dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;1;1" keyTimes="0;0.3;1" path="M391 299 C 402 330 412 352 428 352"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.3;0.31;1"/>
-              </circle>
-              <circle class="flow-dot" r="3" opacity="0">
-                <animateMotion dur="6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.4;0.7;1" path="M452 352 C 478 352 484 262 481 211"/>
-                <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.39;0.4;0.7;0.71;1"/>
-              </circle>
-            </g>
-          </svg>
-          <p class="flow-caption" id="flow-caption" aria-live="polite"><span class="flow-caption-hint">Hover or tap a step in the flow to see the work behind it.</span></p>
+        <div class="hero-visual fx-hero-trace">
+          <div class="fx-panel fx-trace-panel" aria-label="Animated example: a declined payment is investigated, fixed and approved">
+            <div class="fx-panel-top">
+              <span class="fx-live"><span class="fx-dot"></span>Transaction trace · live</span>
+              <button class="fx-btn fx-replay" type="button">Replay</button>
+            </div>
+            <div class="fx-trace">
+              <div class="fx-hop"><span class="fx-node">CO</span><span class="fx-hop-name">Checkout</span><span class="fx-alt"></span></div>
+              <div class="fx-hop"><span class="fx-node">3DS</span><span class="fx-hop-name">3DS</span><span class="fx-alt"></span></div>
+              <div class="fx-hop"><span class="fx-node">PSP</span><span class="fx-hop-name">PSP</span><span class="fx-alt"></span></div>
+              <div class="fx-hop"><span class="fx-node">ACQ</span><span class="fx-hop-name">Acquirer</span><span class="fx-alt"></span></div>
+              <div class="fx-hop"><span class="fx-node">ISS</span><span class="fx-hop-name">Issuer</span><span class="fx-alt"></span></div>
+            </div>
+            <div class="fx-log" aria-hidden="true">
+              <div><span class="t">00:00</span><span class="hi">auth request · Mastercard prepaid · FR</span></div>
+              <div><span class="t">00:01</span><span class="bad">✕ 05 · Do Not Honor</span></div>
+              <div><span class="t">00:03</span><span class="warn">root cause · wrong prepaid parameter</span></div>
+              <div><span class="t">00:04</span><span class="hi">fix applied · retry</span></div>
+              <div><span class="t">00:05</span><span class="ok">✓ 00 · Approved</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -289,6 +205,31 @@
       </div>
     </section>
 
+    <!-- ============================== COVERAGE ============================== -->
+    <section class="section section--alt" id="coverage" aria-labelledby="coverage-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What I cover</p>
+          <h2 class="section-title" id="coverage-title">Five layers of payment work, in one person.</h2>
+          <p class="lead">Most profiles cover one or two of these. Switch the tabs to compare.</p>
+        </div>
+        <div class="fx-panel fx-cover">
+          <div class="fx-tabs" role="tablist" aria-label="Profile">
+            <button class="fx-tab" role="tab" type="button" data-p="analyst" aria-selected="false">Data analyst</button>
+            <button class="fx-tab" role="tab" type="button" data-p="ops" aria-selected="false">Payments ops</button>
+            <button class="fx-tab" role="tab" type="button" data-p="me" aria-selected="true">Dimitrios</button>
+          </div>
+          <p class="fx-cover-head" id="fxCoverHead">Covers all 5 layers</p>
+          <div class="fx-layers">
+            <div class="fx-stack" aria-hidden="true" id="fxStack">
+              <div class="fx-slab" style="top:0"></div><div class="fx-slab" style="top:36px"></div><div class="fx-slab" style="top:72px"></div><div class="fx-slab" style="top:108px"></div><div class="fx-slab" style="top:144px"></div>
+            </div>
+            <div class="fx-rows" id="fxRows"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============================== IMPACT ============================== -->
     <section class="section impact on-navy" id="impact" aria-labelledby="impact-title">
       <img class="impact-bg" src="assets/hero-europe-network.jpg" alt="" loading="lazy" decoding="async" width="1160" height="351">
@@ -325,7 +266,7 @@
           </li>
         </ul>
 
-        <div class="platforms">
+        <div class="platforms fx-marquee">
           <p class="platforms-label">Payment platforms I've worked with</p>
           <ul class="platform-list">
             <li>Stripe</li><li>Worldline</li><li>IXOPAY</li><li>Sticky.io</li><li>GEP</li><li>Inovio</li><li>Celeris</li><li>Ethoca</li><li>Visa RDR</li><li>Chargebacks911</li>
@@ -341,6 +282,21 @@
           <p class="eyebrow">Professional experience</p>
           <h2 class="section-title" id="experience-title">From internship to owning payment operations.</h2>
           <p class="exp-intro"><strong>CLIQ Digital</strong> · Amsterdam · Aug 2020 – Feb 2026. Four roles in five and a half years, each with more ownership.</p>
+        </div>
+
+<div class="fx-panel fx-route-panel" aria-label="Career route">
+          <div class="fx-panel-top"><span>Career route</span></div>
+          <ol class="fx-route">
+            <li class="fx-plane" aria-hidden="true"></li>
+            <li class="fx-stop"><i></i><span class="yr">Patras</span><b>BSc Mathematics</b><small>University of Patras</small></li>
+            <li class="fx-stop"><i></i><span class="yr">Greece</span><b>Maths teacher</b><small>Explaining hard things simply</small></li>
+            <li class="fx-stop"><i></i><span class="yr">2019</span><b>Twente</b><small>Pre-master, Netherlands</small></li>
+            <li class="fx-stop"><i></i><span class="yr">Aug 2020</span><b>CLIQ Digital</b><small>Country operations intern</small></li>
+            <li class="fx-stop"><i></i><span class="yr">Mar 2021</span><b>Product Ops Manager</b><small>Built card payments</small></li>
+            <li class="fx-stop"><i></i><span class="yr">Jan 2022</span><b>Senior Product Ops</b><small>Day-to-day lead of three</small></li>
+            <li class="fx-stop"><i></i><span class="yr">Mar 2024</span><b>Payment Ops Manager</b><small>Payments end to end</small></li>
+            <li class="fx-stop fx-next"><i></i><span class="yr">Next</span><b>Your team</b><small>Open to new roles</small></li>
+          </ol>
         </div>
 
         <ol class="timeline">
@@ -413,7 +369,8 @@
 
         <ul class="cases">
           <!-- 1 -->
-          <li id="case-auth" class="case">
+          <li id="case-auth" class="case case--wide">
+            <div class="fx-ticket-head"><span class="fx-id">CASE-01</span><span class="fx-sev">Sev · High</span><span class="fx-state">Resolved · ≈ +7% auth</span></div>
             <p class="case-cat">Payments · Data analysis · Root-cause investigation</p>
             <h3>Payment Authorization Optimization</h3>
             <div class="case-visual" aria-hidden="true">
@@ -424,6 +381,23 @@
                 <li><span class="chip">Corrective action</span></li>
                 <li><span class="chip chip--strong">Improved authorization</span></li>
               </ul>
+            </div>
+            <div class="fx-panel fx-chart-panel">
+              <div class="fx-panel-top"><span>Authorization rate · one market</span><button class="fx-btn" type="button" id="fxChartReplay">Replay</button></div>
+              <div class="fx-chart-wrap">
+                <svg class="fx-chart" viewBox="0 0 560 230" role="img" aria-label="Illustrative chart: authorization rate drops, the cause is found, the fix goes live and the rate recovers by about 7 percent">
+                  <defs><linearGradient id="fxArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5b8def" stop-opacity=".28"/><stop offset="1" stop-color="#5b8def" stop-opacity="0"/></linearGradient></defs>
+                  <g class="fx-grid"><line x1="40" x2="540" y1="40" y2="40"/><line x1="40" x2="540" y1="90" y2="90"/><line x1="40" x2="540" y1="140" y2="140"/><line x1="40" x2="540" y1="190" y2="190"/></g>
+                  <g class="fx-axis"><text x="40" y="214">W1</text><text x="122" y="214">W3</text><text x="205" y="214">W5</text><text x="288" y="214">W7</text><text x="371" y="214">W9</text><text x="454" y="214">W11</text></g>
+                  <path class="fx-area" id="fxChartArea" d=""/>
+                  <path class="fx-line" id="fxChartLine" d=""/>
+                  <g class="fx-ann" id="fxAnn1"><line x1="205" x2="205" y1="60" y2="190" stroke="#ff6b6b"/><text x="212" y="64" fill="#ff6b6b">DROP DETECTED</text></g>
+                  <g class="fx-ann" id="fxAnn2"><line x1="288" x2="288" y1="92" y2="190" stroke="#f5b84a"/><text x="295" y="88" fill="#f5b84a">MC PREPAID PARAM</text></g>
+                  <g class="fx-ann" id="fxAnn3"><line x1="371" x2="371" y1="120" y2="190" stroke="#9bb9f5"/><text x="378" y="132" fill="#9bb9f5">FIX LIVE</text></g>
+                  <g class="fx-ann" id="fxAnn4"><circle cx="537" cy="48" r="5" fill="#4fd39a"/><text x="470" y="34" fill="#4fd39a">≈ +7%</text></g>
+                </svg>
+              </div>
+              <p class="fx-note">Illustrative shape, not real data. Only the ≈ +7% outcome is real.</p>
             </div>
             <p class="case-block-label">Problem</p>
             <p class="case-problem">Authorization rates in one market dropped below the rest of the portfolio, with no obvious cause on the surface.</p>
@@ -446,6 +420,7 @@
 
           <!-- 2 -->
           <li id="case-wallets" class="case">
+            <div class="fx-ticket-head"><span class="fx-id">CASE-02</span><span class="fx-sev fx-sev-soft">Launch</span><span class="fx-state">Live in France</span></div>
             <p class="case-cat">Digital payments · Product delivery · Technical integrations</p>
             <h3>Apple Pay and Google Pay Launch in France</h3>
             <div class="case-visual" aria-hidden="true">
@@ -482,15 +457,23 @@
           </li>
 
           <!-- 3 -->
-          <li id="case-ai" class="case">
+          <li id="case-ai" class="case case--wide">
+            <div class="fx-ticket-head"><span class="fx-id">CASE-03</span><span class="fx-sev fx-sev-soft">Automation</span><span class="fx-state">2 weeks → 4 days</span></div>
             <p class="case-cat">AI automation · Process improvement · Operational efficiency</p>
             <h3>Partner Declaration Workflow with AI Agents</h3>
-            <div class="case-visual" aria-hidden="true">
-              <ul class="flow flow--arrows">
-                <li><span class="chip">≈2 weeks, manual</span></li>
-                <li><span class="chip">AI-assisted workflow</span></li>
-                <li><span class="chip chip--strong">≈4 days</span></li>
+            <div class="fx-panel fx-ba">
+              <div class="fx-panel-top"><span>Partner declaration cycle</span><span id="fxBaMode" class="fx-mode">Manual</span></div>
+              <p class="fx-ba-days"><span id="fxBaDays">14</span><small>days</small></p>
+              <div class="fx-bar"><span id="fxBaBar" style="width:100%"></span></div>
+              <ul class="fx-ba-steps">
+                <li><span>Prepare declaration letters</span><span class="fx-chip off" data-auto="0.2" data-on="AI agent">Manual</span></li>
+                <li><span>Collect partner documents</span><span class="fx-chip off" data-auto="0.45" data-on="Streamlined">Manual</span></li>
+                <li><span>Update licences and content</span><span class="fx-chip off" data-auto="0.65" data-on="Streamlined">Manual</span></li>
+                <li><span>Chase signatures</span><span class="fx-chip off" data-auto="0.85" data-on="Streamlined">Manual</span></li>
               </ul>
+              <label class="fx-range-label" for="fxBaRange">Drag to switch on the AI agents</label>
+              <input type="range" id="fxBaRange" min="0" max="100" value="0">
+              <div class="fx-range-ends"><span>Before · ≈2 weeks</span><span>With AI agents · ≈4 days</span></div>
             </div>
             <p class="case-block-label">Problem</p>
             <p class="case-problem">Every partner declaration meant collecting documents, preparing content, updating licences, chasing signatures and entering products by hand. One cycle took about two weeks.</p>
@@ -512,6 +495,7 @@
 
           <!-- 4 -->
           <li id="case-setup" class="case">
+            <div class="fx-ticket-head"><span class="fx-id">CASE-04</span><span class="fx-sev fx-sev-soft">Process</span><span class="fx-state">In use</span></div>
             <p class="case-cat">Product operations · Workflow design · Stakeholder management</p>
             <h3>Centralized Product Setup Workflow</h3>
             <div class="case-visual" aria-hidden="true">
@@ -542,6 +526,7 @@
 
           <!-- 5 -->
           <li id="case-fraud" class="case case--wide">
+            <div class="fx-ticket-head"><span class="fx-id">CASE-05</span><span class="fx-sev">Sev · Critical</span><span class="fx-state">Traffic restored</span></div>
             <p class="case-cat">Fraud &amp; risk · Incident management · Escalation</p>
             <h3>Fraud Risk Response and Traffic Shutdown</h3>
             <div class="case-visual" aria-hidden="true">
@@ -573,6 +558,24 @@
             </details>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============================== DECLINE DECODER ============================== -->
+    <section class="section" id="decoder" aria-labelledby="decoder-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Decline decoder</p>
+          <h2 class="section-title" id="decoder-title">Pick a decline code. Here's what I'd check first.</h2>
+          <p class="lead">A small example of how I approach failed payments.</p>
+        </div>
+        <div class="fx-panel">
+          <div class="fx-codes" id="fxCodes"></div>
+          <div class="fx-decode">
+            <div><span class="fx-k">What it means</span><h3 id="fxDcTitle"></h3><p id="fxDcMean"></p><span class="fx-chip" id="fxDcType"></span></div>
+            <div><span class="fx-k">What I check first</span><ul id="fxDcCheck"></ul></div>
+          </div>
+        </div>
       </div>
     </section>
 
